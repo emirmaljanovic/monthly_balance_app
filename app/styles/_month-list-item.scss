@@ -1,0 +1,58 @@
+@mixin hover-gradient-background {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#75adb0+0,79b8bb+50,75adb0+100 */
+  background: #75adb0; /* Old browsers */
+  background: -moz-linear-gradient(left, #75adb0 0%, #79b8bb 50%, #75adb0 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #75adb0 0%,#79b8bb 50%,#75adb0 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #75adb0 0%,#79b8bb 50%,#75adb0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75adb0', endColorstr='#75adb0',GradientType=1 ); /* IE6-9 */
+}
+
+.month-list-item {
+  font-size: 34px;
+  color: #FFF;
+  width: 100%;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-transform: uppercase;
+  text-align: center;
+
+  border-bottom: 1px solid #FFF;
+
+  padding: 10px 0px;
+
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+
+  &.new {
+    opacity: 0.3;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &.active {
+    @include hover-gradient-background;
+    
+    &:before {
+      content: ' ';
+      height: 0;
+      position: absolute;
+      width: 0;
+      border: 10px solid transparent;
+      left: 0;
+      border-left-color: #fff;
+      transition: all 200ms ease-in-out;
+    }
+  }
+
+  &:hover {
+    @include hover-gradient-background;
+  }
+}

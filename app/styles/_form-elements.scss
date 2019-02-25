@@ -1,0 +1,57 @@
+.input-wrapper {
+  width: 100%;
+  padding: 10px 0px;
+}
+
+input, select {
+  outline: none;
+
+  padding: 8px;
+  font-size: 12px;
+
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-radius: 0px;
+  border-bottom: 1px solid #a7a7a7;
+  font-size: 18px;
+  color: $turquoise;
+
+  -webkit-appearance: none;
+
+  &[type=date], &[type=number] {
+    padding: 4px;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+  }
+
+  &::placeholder {
+    color: $turquoise;
+  }
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  &.btn-confirm {
+    background-color: #2e7d32;
+
+    &:hover {
+      background-color: #38A23D;
+    }
+  }
+
+  &.btn-cancel {
+    background-color: $red_basic;
+
+    &:hover {
+      background-color: $red_basic_hovered;
+    }
+  }
+}
